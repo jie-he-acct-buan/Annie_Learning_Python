@@ -16,7 +16,7 @@ def dice(n):
 # what is the probability that when it is rolled,
 # a 2 is facing up?
 
-def dice(m):
+def dice(m ) :
     count = 0
     for i in range(m):
         r = random.randint(1, 6)
