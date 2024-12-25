@@ -301,43 +301,6 @@ three_rep(1_000_000)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def one_one_one(m):
     count = 0
     cmt = 5 * ['r'] + 6 * ['d'] + 2 * ['i']
@@ -356,27 +319,6 @@ one_one_one(1_000_000)
 # question 6
 # what is the probability that a random arrangement of the letters in the word
 # "ILIKEMATH" will have both "I"s next to each other?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -467,7 +409,7 @@ for n in [10, 100, 1_000, 10_000, 100_000, 1_000_000]:
 
 
 
-
+# new question
 lst = []
 for i in range(10, 101, 1):
     d = i % 10
