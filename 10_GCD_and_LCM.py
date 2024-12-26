@@ -30,6 +30,10 @@ def compare(a, b):
     return (annie_gcd(a, b) == math.gcd(a, b)) \
         and (annie_lcm(a, b) == math.lcm(a, b))
 
+
+# step 4
+# try to run annie_gcd and annie_lcm for n times,
+# and confirm there are no differences from math library
 def confirm(n):
     count = 0
     for i in range(n):
@@ -39,5 +43,8 @@ def confirm(n):
             count = count + 1
     return count
 
+
+# step 5
+# call confirm function
 confirm(10_000)
 
