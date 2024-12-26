@@ -1,8 +1,9 @@
 import math
 import random
 
-# step 1
 
+# step 1
+# calculate gcd
 def annie_gcd(a, b):
     num = max([a, b])
     den = min([a, b])
@@ -16,9 +17,15 @@ def annie_gcd(a, b):
     
     return den
 
+
+# step 2
+# lcm is a times b then devided by gcd
 def annie_lcm(a, b):
     return int(a * b / annie_gcd(a, b))
 
+
+# step 3
+# compare whether annie's function with math library's 
 def compare(a, b):
     return (annie_gcd(a, b) == math.gcd(a, b)) \
         and (annie_lcm(a, b) == math.lcm(a, b))
