@@ -2,13 +2,6 @@ import random
 import math
 import time
 
-def dice(n):
-    lst = []
-    for i in range(n):
-        r = random.randint(1, 6)
-        lst.append(r)
-    return lst
-
 
 ################################################################################
 # question 1
@@ -16,11 +9,13 @@ def dice(n):
 # what is the probability that when it is rolled,
 # a 2 is facing up?
 
-def dice(m ) :
+def dice(m):
+    lst = []
     count = 0
-    for i in range(m):
+    for _ in range(m):
         r = random.randint(1, 6)
         if r == 2:
+            lst.append(r)
             count += 1
     return count / m
 
@@ -37,7 +32,7 @@ dice(10_000_000)
 
 def coin_head(m):
     count = 0
-    for i in range(m):
+    for _ in range(m):
         lst = []
         p = random.randint(0, 1) # let 0 denote head and 1 denote tail
         lst.append(p)
@@ -58,7 +53,7 @@ coin_head(1_000_000)
 # 2.2. at least 15 cents worth of coins come up head?
 def coin_15_cents(m):
     count = 0
-    for i in range(m):
+    for _ in range(m):
         lst = []
         p = random.randint(0, 1) # let 1 denote head and 0 denote tail
         lst.append(p)
@@ -84,60 +79,59 @@ coin_15_cents(1_000_000)
 # what is the probability that
 
 # 3.1. "double" are rolled (the two dice show the same number)?
+def double(m):
+    count = 0
+    for _ in range(m):
+        roll_1 = random.randint(1, 6)
+        roll_2 = random.randint(1, 6)
+        if roll_1 == roll_2:
+            count += 1
+    
+    return count / m
 
-
-
-
-
-
-
-
-
-# hint
-lst = ['2', '3']
-set(lst)
-len(set(lst))
-
-
-lst = ['2', '2']
-set(lst)
-len(set(lst))
-
-
-lst = ['a', 'b', 'c', 'b']
-set(lst)
-len(set(lst))
-
-
-lst = ['annie', 'Annie', 'ANNIE', 'Annie']
-set(lst)
-len(set(lst))
-
+double(1_000_000)
 
 
 # 3.2. the sum rolled is 9?
+def sum_9(m):
+    count = 0
+    for _ in range(m):
+        roll_1 = random.randint(1, 6)
+        roll_2 = random.randint(1, 6)
+        if roll_1 + roll_2 == 9:
+            count += 1
+    
+    return count / m
 
-
-
-
+sum_9(1_000_000)
 
 
 # 3.3. the sum rolled is greater than 3 but less than 7?
+def sum_between_3_7(m):
+    count = 0
+    for _ in range(m):
+        roll_1 = random.randint(1, 6)
+        roll_2 = random.randint(1, 6)
+        if 3 < roll_1 + roll_2 < 7:
+            count += 1
+    
+    return count / m
 
-
+sum_between_3_7(1_000_000)
 
 
 # 3.4. at least one of the dice shows a 1?
+def at_least_1(m):
+    count = 0
+    for _ in range(m):
+        roll_1 = random.randint(1, 6)
+        roll_2 = random.randint(1, 6)
+        if (roll_1 == 1) or (roll_2 == 1):
+            count += 1
+    
+    return count / m
 
-
-
-
-# hint:
-lst = ['a', 'b', 'c']
-'a' in lst
-'d' in lst
-
-
+at_least_1(1_000_000)
 
 
 ################################################################################
@@ -146,24 +140,20 @@ lst = ['a', 'b', 'c']
 # what is the probability that the number
 
 # 4.1. is a perfect square?
+def pfct_sqr(m):
+    lst = []
+    count = 0
+    for _ in range(m):
+        r = random.randint(1, 100)
+        if math.sqrt(r) == int(math.sqrt(r)):
+            lst.append(r)
+            count += 1
+    return count / m
+
+pfct_sqr(1_000_000)
 
 
-
-
-
-
-# hint:
-number = 99
-number ** 0.5
-round(number ** 0.5)
-
-
-number = 100
-number ** 0.5
-round(number ** 0.5)
-round(number ** 0.5) == (number ** 0.5)
-
-# 4.2. is a nultiple of 3?
+# 4.2. is a multiple of 3?
 
 
 
