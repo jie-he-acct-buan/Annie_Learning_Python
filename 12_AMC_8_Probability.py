@@ -403,3 +403,21 @@ for i in range(10, 101, 1):
         lst.append(i)
 print(lst)
 
+
+def russian_roulette(n):
+    cnt_a = cnt_b = 0
+    for _ in range(n):
+        lst = 5 * [0] + [1]
+        random.shuffle(lst)
+        player = {'A': [i for i in range(6) if i % 2 == 0],
+                  'B': [i for i in range(6) if i % 2 != 0]}
+        for i in range(6):
+            if lst[i] == 1:
+                if i in player['A']:
+                    cnt_a += 1
+                else:
+                    cnt_b += 1
+                break
+    print('The probaility of A is dead is {:.2%}.'.format(cnt_a / n))
+
+russian_roulette(1_000_000)
